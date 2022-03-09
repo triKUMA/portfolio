@@ -1,3 +1,3 @@
-# tri/KUMA Portfolio
+# Portfolio
 
 This is my personal developer portfolio.

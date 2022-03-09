@@ -1,0 +1,40 @@
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-inline: 1.5rem;
+
+  .logo {
+    display: flex;
+    font-size: 1.35rem;
+    font-weight: 300;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 3.5rem;
+  }
+
+  .link {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: black;
+    padding-bottom: 2px;
+    padding-inline: 1px;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      border-bottom-color: black;
+    }
+  }
+}
