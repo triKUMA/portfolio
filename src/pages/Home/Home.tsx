@@ -3,7 +3,9 @@ import "./styles/Home.css";
 function Home() {
   return (
     <div className="home">
-      <p>This is the home page.</p>
+      <div className="section one"></div>
+      <div className="section two"></div>
+      <div className="section three"></div>
     </div>
   );
 }

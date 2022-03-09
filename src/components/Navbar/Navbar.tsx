@@ -1,5 +1,5 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import KUMA from "../KUMA/KUMA";
 import "./styles/Navbar.css";
 
 function Navbar() {
@@ -9,7 +9,6 @@ function Navbar() {
         <p>
           tri/<span>KUMA</span>
         </p>
-        <KUMA />
       </div>
       <div className="nav-links">
         <Link className="link" to="/">

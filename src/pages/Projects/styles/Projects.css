@@ -1,1 +1,17 @@
-/* No CSS *//*# sourceMappingURL=Projects.css.map */
+.projects .section {
+  width: 100%;
+  height: 35rem;
+}
+
+.projects .section.one {
+  background-color: white;
+}
+
+.projects .section.two {
+  background-color: #ff008c;
+}
+
+.projects .section.three {
+  background-color: white;
+}
+/*# sourceMappingURL=Projects.css.map */

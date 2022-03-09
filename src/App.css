@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=App.css.map */
+.App .icon {
+  position: fixed;
+  top: 0.65rem;
+  left: 1rem;
+}
+/*# sourceMappingURL=App.css.map */

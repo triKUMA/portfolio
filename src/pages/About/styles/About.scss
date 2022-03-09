@@ -1,0 +1,16 @@
+.about {
+  .section {
+    width: 100%;
+    height: 35rem;
+
+    &.one {
+      background-color: white;
+    }
+    &.two {
+      background-color: #ffbb00;
+    }
+    &.three {
+      background-color: white;
+    }
+  }
+}

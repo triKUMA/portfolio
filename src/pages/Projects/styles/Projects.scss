@@ -1,0 +1,16 @@
+.projects {
+  .section {
+    width: 100%;
+    height: 35rem;
+
+    &.one {
+      background-color: white;
+    }
+    &.two {
+      background-color: #ff008c;
+    }
+    &.three {
+      background-color: white;
+    }
+  }
+}

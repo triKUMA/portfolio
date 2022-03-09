@@ -1,1 +1,17 @@
-/* No CSS *//*# sourceMappingURL=About.css.map */
+.about .section {
+  width: 100%;
+  height: 35rem;
+}
+
+.about .section.one {
+  background-color: white;
+}
+
+.about .section.two {
+  background-color: #ffbb00;
+}
+
+.about .section.three {
+  background-color: white;
+}
+/*# sourceMappingURL=About.css.map */

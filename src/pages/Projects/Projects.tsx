@@ -3,7 +3,9 @@ import "./styles/Projects.css";
 function Projects() {
   return (
     <div className="projects">
-      <p>This is the projects page.</p>
+      <div className="section one"></div>
+      <div className="section two"></div>
+      <div className="section three"></div>
     </div>
   );
 }

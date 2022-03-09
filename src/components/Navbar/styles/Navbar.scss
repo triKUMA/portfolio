@@ -1,5 +1,5 @@
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -21,7 +21,7 @@
 
   .nav-links {
     display: flex;
-    gap: 3.5rem;
+    gap: 3.25rem;
   }
 
   .link {
@@ -30,7 +30,7 @@
     font-weight: 600;
     color: black;
     padding-bottom: 2px;
-    padding-inline: 1px;
+    padding-inline: 4px;
     border-bottom: 2px solid transparent;
 
     &:hover {

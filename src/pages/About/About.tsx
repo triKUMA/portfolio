@@ -3,7 +3,9 @@ import "./styles/About.css";
 function About() {
   return (
     <div className="about">
-      <p>This is the about page.</p>
+      <div className="section one"></div>
+      <div className="section two"></div>
+      <div className="section three"></div>
     </div>
   );
 }
