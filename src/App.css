@@ -1,3 +1,27 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.App::-webkit-scrollbar {
+  width: 0.5rem;
+  background: #f0f0f0;
+}
+
+.App::-webkit-scrollbar-thumb {
+  background: #cdcdcd;
+}
+
+.App::-webkit-scrollbar-thumb:hover {
+  background: #a6a6a6;
+}
+
+.App::-webkit-scrollbar-thumb:active {
+  background: #606060;
+}
+
 .App .icon {
   position: fixed;
   top: 0.65rem;

@@ -15,12 +15,11 @@ function KUMA(props: KUMAProps) {
     "＼ʕ•ᴥ•ʔ／",
     "ʕ˵•ᴥ•˵ʔ",
     "ᕕʕ •ᴥ•ʔ୨",
-    "ʕ；•`ᴥ•´ʔ",
+    "ʕ ; •`ᴥ•´ʔ",
     "┏ʕ •ᴥ•ʔ┛",
     "ʕ♡ᴥ♡ʔ",
     "ʕ≧ᴥ≦ʔ",
     "ʕ•ᴥ•ʔﾉ♡",
-    "ʕノ•ᴥ•ʔノ︵┻┻",
     "ʕᵔᴥᵔʔ",
   ];
   const [kaomojiIndex, setKaomojiIndex] = useState(0);
