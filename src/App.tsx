@@ -9,7 +9,7 @@ import Projects from "./pages/Projects/Projects";
 function App() {
   return (
     <div className="App">
-      <KUMA className="icon" />
+      <KUMA />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
