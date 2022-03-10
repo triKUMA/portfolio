@@ -1,9 +1,9 @@
 :root {
   --background-colour: black;
   --text-colour: white;
-  --primary-col-1: rgb(0, 221, 11);
-  --primary-col-2: red;
-  --primary-col-3: blue;
+  --primary-col-1: rgb(221, 217, 0);
+  --primary-col-2: rgb(255, 49, 128);
+  --primary-col-3: #0078d7;
 }
 
 .App {
@@ -29,7 +29,7 @@
   border: 3px solid var(--primary-col-1);
   -webkit-box-shadow: -2px 4px 32px -16px var(--primary-col-1);
           box-shadow: -2px 4px 32px -16px var(--primary-col-1);
-  background-color: rgba(0, 255, 0, 0.075);
+  background-color: rgba(255, 255, 0, 0.075);
   overflow: hidden;
 }
 
@@ -37,7 +37,7 @@
   position: absolute;
   padding: 4rem;
   z-index: 20;
-  color: white;
+  color: var(--text-colour);
   font-size: 5rem;
   font-weight: 700;
 }
@@ -83,6 +83,30 @@
   background-image: linear-gradient(45deg, var(--primary-col-2) 10%, var(--primary-col-3) 90%);
   -webkit-box-shadow: -1rem 2rem 5rem 0px rgba(255, 0, 0, 0.25);
           box-shadow: -1rem 2rem 5rem 0px rgba(255, 0, 0, 0.25);
+  -webkit-animation: hover 8000ms ease-in-out infinite alternate;
+          animation: hover 8000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes hover {
+  0% {
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+  }
+  100% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+  }
+}
+
+@keyframes hover {
+  0% {
+    -webkit-transform: translateY(-3rem);
+            transform: translateY(-3rem);
+  }
+  100% {
+    -webkit-transform: translateY(3rem);
+            transform: translateY(3rem);
+  }
 }
 
 .App .circle.two {
@@ -93,15 +117,71 @@
   background-image: linear-gradient(320deg, var(--primary-col-2) 10%, var(--primary-col-3) 90%);
   -webkit-box-shadow: -0.5rem 0.75rem 2rem 0px rgba(255, 0, 255, 0.25);
           box-shadow: -0.5rem 0.75rem 2rem 0px rgba(255, 0, 255, 0.25);
+  -webkit-animation: circle 20000ms linear infinite;
+          animation: circle 20000ms linear infinite;
+}
+
+@-webkit-keyframes circle {
+  0% {
+    -webkit-transform-origin: 0 5rem;
+            transform-origin: 0 5rem;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform-origin: 0 5rem;
+            transform-origin: 0 5rem;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes circle {
+  0% {
+    -webkit-transform-origin: 0 5rem;
+            transform-origin: 0 5rem;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform-origin: 0 5rem;
+            transform-origin: 0 5rem;
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
 }
 
 .App .circle.three {
-  top: 27.5%;
+  top: 35%;
   right: 12.5%;
   width: 10rem;
   height: 10rem;
   background-image: linear-gradient(190deg, var(--primary-col-2) 10%, var(--primary-col-3) 90%);
   -webkit-box-shadow: -0.5rem 1.5rem 3rem 0px rgba(0, 0, 255, 0.25);
           box-shadow: -0.5rem 1.5rem 3rem 0px rgba(0, 0, 255, 0.25);
+  -webkit-animation: figure-8 10000ms ease-in-out infinite alternate;
+          animation: figure-8 10000ms ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes figure-8 {
+  0% {
+    -webkit-transform: translate(-2rem, -2rem);
+            transform: translate(-2rem, -2rem);
+  }
+  100% {
+    -webkit-transform: translate(2rem, 2rem);
+            transform: translate(2rem, 2rem);
+  }
+}
+
+@keyframes figure-8 {
+  0% {
+    -webkit-transform: translate(-2rem, -2rem);
+            transform: translate(-2rem, -2rem);
+  }
+  100% {
+    -webkit-transform: translate(2rem, 2rem);
+            transform: translate(2rem, 2rem);
+  }
 }
 /*# sourceMappingURL=App.css.map */
