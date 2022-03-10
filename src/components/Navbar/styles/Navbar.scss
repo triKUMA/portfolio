@@ -37,10 +37,24 @@
     font-weight: 600;
     color: var(--text-colour);
     padding: 2px 4px;
-    border-bottom: 2px solid transparent;
+    position: relative;
 
-    &:hover {
-      border-bottom-color: black;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background-color: rgb(var(--primary-col-1));
+
+      transition: width 200ms ease;
+    }
+
+    &:hover:before {
+      width: 100%;
+
+      transition: width 100ms ease 100ms;
     }
   }
 

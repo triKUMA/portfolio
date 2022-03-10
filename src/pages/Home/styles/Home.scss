@@ -4,7 +4,12 @@
     height: 35rem;
 
     &.two {
-      background-color: #0066ff;
+      background-image: linear-gradient(
+        to top,
+        rgb(var(--primary-col-2)),
+        rgb(var(--primary-col-3))
+      );
+      height: 130rem;
     }
   }
 }

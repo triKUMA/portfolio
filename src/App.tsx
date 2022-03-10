@@ -9,6 +9,13 @@ import Projects from "./pages/Projects/Projects";
 function App() {
   return (
     <div className="App">
+      <div className="circle one" />
+      <div className="circle two" />
+      <div className="circle three" />
+      <div className="green">
+        <p className="text">This is random text.</p>
+        <div className="grid" />
+      </div>
       <KUMA />
       <Navbar />
       <Routes>

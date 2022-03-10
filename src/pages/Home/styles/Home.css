@@ -4,6 +4,9 @@
 }
 
 .home .section.two {
-  background-color: #0066ff;
+  background-color: blue;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(var(--primary-col-2)), to(var(--primary-col-3)));
+  background-image: linear-gradient(to top, var(--primary-col-2), var(--primary-col-3));
+  height: 130rem;
 }
 /*# sourceMappingURL=Home.css.map */
