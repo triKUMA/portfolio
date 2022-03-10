@@ -4,17 +4,25 @@ import "./styles/Navbar.css";
 import { FiChevronUp } from "react-icons/fi";
 
 function Navbar() {
-  useEffect(() => {
+  function setToTopVisibility() {
     const toTop = document.getElementById("to-top");
 
     if (toTop !== null) {
+      if (window.scrollY <= 40) {
+        toTop.classList.add("disable");
+      } else {
+        toTop.classList.remove("disable");
+      }
+    }
+  }
+
+  useEffect(() => {
+    setToTopVisibility();
+
+    const toTop = document.getElementById("to-top");
+    if (toTop !== null) {
       document.addEventListener("scroll", (e) => {
-        if (window.scrollY <= 40) {
-          toTop.classList.add("disable");
-          console.log("at top");
-        } else {
-          toTop.classList.remove("disable");
-        }
+        setToTopVisibility();
       });
     }
   }, []);

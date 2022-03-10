@@ -1,9 +1,16 @@
+:root {
+  --background-colour: black;
+  --text-colour: white;
+}
+
 .App {
   width: 100vw;
+  background-color: var(--background-colour);
 
   .kuma {
     position: fixed;
     top: 1.15rem;
     left: 1.5rem;
+    color: var(--text-colour);
   }
 }
