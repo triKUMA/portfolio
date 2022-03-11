@@ -1,9 +1,48 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Navbar.css";
 import { FiChevronUp } from "react-icons/fi";
+import { HiColorSwatch, HiSun } from "react-icons/hi";
 
 function Navbar() {
+  const [colourTheme, setColourTheme] = useState(true);
+  const [colourPalette, setColourPalette] = useState(true);
+
+  function toggleColourTheme() {
+    setColourTheme(!colourTheme);
+
+    if (colourTheme) {
+      document.documentElement.style.setProperty(
+        "--background-colour",
+        "black"
+      );
+      document.documentElement.style.setProperty("--text-colour", "white");
+    } else {
+      document.documentElement.style.setProperty(
+        "--background-colour",
+        "white"
+      );
+      document.documentElement.style.setProperty("--text-colour", "black");
+    }
+  }
+
+  function toggleColourPalette() {
+    setColourPalette(!colourPalette);
+
+    if (colourPalette) {
+      document.documentElement.style.setProperty("--primary-col-1", "#dbd82c");
+      document.documentElement.style.setProperty("--primary-col-2", "#e02463");
+      document.documentElement.style.setProperty("--primary-col-3", "#0073d1");
+      // document.documentElement.style.setProperty("--primary-col-1", "#dbd82c");
+      // document.documentElement.style.setProperty("--primary-col-2", "#e54c7f");
+      // document.documentElement.style.setProperty("--primary-col-3", "#0078d7");
+    } else {
+      document.documentElement.style.setProperty("--primary-col-1", "#00ff00");
+      document.documentElement.style.setProperty("--primary-col-2", "#ff0000");
+      document.documentElement.style.setProperty("--primary-col-3", "#0000ff");
+    }
+  }
+
   function setToTopVisibility() {
     const toTop = document.getElementById("to-top");
 
@@ -17,6 +56,8 @@ function Navbar() {
   }
 
   useEffect(() => {
+    toggleColourTheme();
+    toggleColourPalette();
     setToTopVisibility();
 
     const toTop = document.getElementById("to-top");
@@ -45,6 +86,20 @@ function Navbar() {
           Projects
         </Link>
         <button className="link">Contact</button>
+      </div>
+      <div className="icons">
+        <HiSun
+          className="icon sun"
+          onClick={() => {
+            toggleColourTheme();
+          }}
+        />
+        <HiColorSwatch
+          className="icon colour"
+          onClick={() => {
+            toggleColourPalette();
+          }}
+        />
       </div>
       <FiChevronUp
         className="to-top disable"

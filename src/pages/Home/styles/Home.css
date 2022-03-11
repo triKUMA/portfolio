@@ -1,12 +1,21 @@
 .home .section {
   width: 100%;
-  height: 35rem;
+  height: 45rem;
 }
 
 .home .section.two {
-  background-color: blue;
   background-image: -webkit-gradient(linear, left bottom, left top, from(var(--primary-col-2)), to(var(--primary-col-3)));
   background-image: linear-gradient(to top, var(--primary-col-2), var(--primary-col-3));
   height: 130rem;
+}
+
+.home .section.three {
+  height: 35rem;
+}
+
+.home .wave {
+  position: absolute;
+  top: 25rem;
+  z-index: 1;
 }
 /*# sourceMappingURL=Home.css.map */

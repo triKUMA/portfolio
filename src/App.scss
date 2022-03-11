@@ -4,8 +4,11 @@
   // --background-colour: white;
   // --text-colour: black;
   --primary-col-1: rgb(221, 217, 0);
-  --primary-col-2: rgb(255, 49, 128);
-  --primary-col-3: #0078d7;
+  --primary-col-2: #e02463;
+  --primary-col-3: #0073d1;
+  // --primary-col-1: lime;
+  // --primary-col-2: red;
+  // --primary-col-3: blue;
 }
 
 .App {
@@ -17,9 +20,10 @@
     top: 1.15rem;
     left: 1.5rem;
     color: var(--text-colour);
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.95));
   }
 
-  .green {
+  .modal {
     position: absolute;
     top: 15%;
     left: 20%;
@@ -28,17 +32,18 @@
     z-index: 10;
     border-radius: 0.5rem;
     border: 3px solid var(--primary-col-1);
-    box-shadow: -2px 4px 32px -16px var(--primary-col-1);
-    background-color: rgba(255, 255, 0, 0.075);
+    box-shadow: -2px 4px 32px -16px rgba(255, 255, 0, 0.5);
+    background-color: rgba(255, 255, 0, 0.1);
     overflow: hidden;
 
     .text {
       position: absolute;
-      padding: 4rem;
+      margin: 3.5rem;
       z-index: 20;
       color: var(--text-colour);
       font-size: 5rem;
       font-weight: 700;
+      filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.5));
     }
   }
 
@@ -85,6 +90,7 @@
   .circle {
     position: absolute;
     border-radius: 50rem;
+    z-index: 2;
 
     &.one {
       top: 35%;
@@ -121,7 +127,7 @@
         var(--primary-col-2) 10%,
         var(--primary-col-3) 90%
       );
-      box-shadow: -0.5rem 0.75rem 2rem 0px rgba(255, 0, 255, 0.25);
+      box-shadow: -0.5rem 0.75rem 2rem 0px rgba(255, 0, 255, 0.15);
 
       animation: circle 20000ms linear infinite;
 
@@ -147,7 +153,7 @@
         var(--primary-col-2) 10%,
         var(--primary-col-3) 90%
       );
-      box-shadow: -0.5rem 1.5rem 3rem 0px rgba(0, 0, 255, 0.25);
+      box-shadow: -0.5rem 1.5rem 3rem 0px rgba(0, 0, 255, 0.3);
 
       animation: figure-8 10000ms ease-in-out infinite alternate;
 

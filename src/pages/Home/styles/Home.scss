@@ -1,15 +1,25 @@
 .home {
   .section {
     width: 100%;
-    height: 35rem;
+    height: 45rem;
 
     &.two {
       background-image: linear-gradient(
         to top,
-        rgb(var(--primary-col-2)),
-        rgb(var(--primary-col-3))
+        var(--primary-col-2),
+        var(--primary-col-3)
       );
       height: 130rem;
     }
+
+    &.three {
+      height: 35rem;
+    }
+  }
+
+  .wave {
+    position: absolute;
+    top: 25rem;
+    z-index: 1;
   }
 }

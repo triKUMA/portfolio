@@ -12,7 +12,7 @@ function App() {
       <div className="circle one" />
       <div className="circle two" />
       <div className="circle three" />
-      <div className="green">
+      <div className="modal">
         <p className="text">This is random text.</p>
         <div className="grid" />
       </div>
