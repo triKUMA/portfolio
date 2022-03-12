@@ -69,7 +69,6 @@
     padding: 0.2rem 0.25rem;
     cursor: pointer;
     z-index: 10;
-    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.95));
 
     transition: top 300ms ease;
 
@@ -83,6 +82,7 @@
   .icons {
     display: flex;
     gap: 0.5rem;
+    z-index: 150;
   }
 
   .icon {

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import KUMA from "./components/KUMA/KUMA";
@@ -12,10 +13,10 @@ function App() {
       <div className="circle one" />
       <div className="circle two" />
       <div className="circle three" />
-      <div className="modal">
+      {/* <div className="modal">
         <p className="text">This is random text.</p>
         <div className="grid" />
-      </div>
+      </div> */}
       <KUMA />
       <Navbar />
       <Routes>

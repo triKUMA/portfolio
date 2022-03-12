@@ -3,8 +3,11 @@ import { Link } from "react-router-dom";
 import "./styles/Navbar.css";
 import { FiChevronUp } from "react-icons/fi";
 import { HiColorSwatch, HiSun } from "react-icons/hi";
+import Modal from "../Modal/Modal";
+import Contact from "../../pages/Contact/Contact";
 
 function Navbar() {
+  const [contactModalActive, setContactModalActive] = useState(false);
   const [colourTheme, setColourTheme] = useState(true);
   const [colourPalette, setColourPalette] = useState(true);
 
@@ -69,46 +72,63 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="navbar">
-      <div className="logo">
-        <p>
-          tri/<span>KUMA</span>
-        </p>
-      </div>
-      <div className="nav-links">
-        <Link className="link" to="/">
-          Home
-        </Link>
-        <Link className="link" to="/about">
-          About
-        </Link>
-        <Link className="link" to="/projects">
-          Projects
-        </Link>
-        <button className="link">Contact</button>
-      </div>
-      <div className="icons">
-        <HiSun
-          className="icon sun"
+    <>
+      <nav className="navbar">
+        <div className="logo">
+          <p>
+            tri/<span>KUMA</span>
+          </p>
+        </div>
+        <div className="nav-links">
+          <Link className="link" to="/">
+            Home
+          </Link>
+          <Link className="link" to="/about">
+            About
+          </Link>
+          <Link className="link" to="/projects">
+            Projects
+          </Link>
+          <button
+            className="link"
+            onClick={() => {
+              setContactModalActive(true);
+            }}
+          >
+            Contact
+          </button>
+        </div>
+        <div className="icons">
+          <HiSun
+            className="icon sun"
+            onClick={() => {
+              toggleColourTheme();
+            }}
+          />
+          <HiColorSwatch
+            className="icon colour"
+            onClick={() => {
+              toggleColourPalette();
+            }}
+          />
+        </div>
+        <FiChevronUp
+          className="to-top disable"
+          id="to-top"
           onClick={() => {
-            toggleColourTheme();
+            window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         />
-        <HiColorSwatch
-          className="icon colour"
-          onClick={() => {
-            toggleColourPalette();
-          }}
-        />
-      </div>
-      <FiChevronUp
-        className="to-top disable"
-        id="to-top"
-        onClick={() => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
+      </nav>
+      <Modal
+        active={contactModalActive}
+        handleDisable={() => {
+          setContactModalActive(false);
         }}
-      />
-    </nav>
+      >
+        <Contact />
+      </Modal>
+    </>
   );
 }
 

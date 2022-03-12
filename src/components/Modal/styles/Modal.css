@@ -1,1 +1,171 @@
-/* No CSS *//*# sourceMappingURL=Modal.css.map */
+.modal-background {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: transparent;
+  z-index: 100;
+  -webkit-animation: fadeIn 250ms ease;
+          animation: fadeIn 250ms ease;
+}
+
+.modal-background.disable {
+  -webkit-animation: fadeOut 100ms ease;
+          animation: fadeOut 100ms ease;
+}
+
+.modal-background.disable .modal {
+  -webkit-animation: popOut 250ms ease;
+          animation: popOut 250ms ease;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes popIn {
+  0% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  90% {
+    -webkit-transform: scale(1.015, 1.015);
+            transform: scale(1.015, 1.015);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+  90% {
+    -webkit-transform: scale(1.015, 1.015);
+            transform: scale(1.015, 1.015);
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+@-webkit-keyframes popOut {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+}
+
+@keyframes popOut {
+  0% {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+  100% {
+    -webkit-transform: scale(0, 0);
+            transform: scale(0, 0);
+  }
+}
+
+.modal {
+  position: relative;
+  border-radius: 0.5rem;
+  border: 3px solid var(--primary-col-1);
+  -webkit-box-shadow: -2px 4px 32px -16px rgba(255, 255, 0, 0.5);
+          box-shadow: -2px 4px 32px -16px rgba(255, 255, 0, 0.5);
+  background-color: rgba(255, 255, 0, 0.1);
+  z-index: 101;
+  -webkit-animation: popIn 250ms ease;
+          animation: popIn 250ms ease;
+}
+
+.modal .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0.5rem;
+  color: var(--text-colour);
+  cursor: pointer;
+  z-index: 102;
+  -webkit-filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+          filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+}
+
+.modal:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, var(--primary-col-1) 1.5px, transparent 1px);
+  background-size: 5rem 5rem;
+  background-repeat: repeat;
+  background-position: center, center;
+}
+
+.modal:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, var(--primary-col-1) 1.5px, transparent 1px);
+  background-size: 5rem 5rem;
+  background-repeat: repeat;
+  background-position: center, center;
+}
+/*# sourceMappingURL=Modal.css.map */

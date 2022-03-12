@@ -1,0 +1,120 @@
+.modal-background {
+  position: fixed;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-color: rgba(0, 0, 0, 0.25);
+  background-color: transparent;
+  z-index: 100;
+  animation: fadeIn 250ms ease;
+
+  &.disable {
+    animation: fadeOut 100ms ease;
+
+    .modal {
+      animation: popOut 250ms ease;
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes popIn {
+    0% {
+      transform: scale(0, 0);
+    }
+    90% {
+      transform: scale(1.015, 1.015);
+    }
+    100% {
+      transform: scale(1, 1);
+    }
+  }
+
+  @keyframes popOut {
+    0% {
+      transform: scale(1, 1);
+    }
+    100% {
+      transform: scale(0, 0);
+    }
+  }
+}
+
+.modal {
+  position: relative;
+  border-radius: 0.5rem;
+  border: 3px solid var(--primary-col-1);
+  box-shadow: -2px 4px 32px -16px rgba(255, 255, 0, 0.5);
+  background-color: rgba(255, 255, 0, 0.1);
+  z-index: 101;
+  animation: popIn 250ms ease;
+
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: content-box;
+    $size: 1.75rem;
+    width: $size;
+    height: $size;
+    margin: 0.5rem;
+    color: var(--text-colour);
+    cursor: pointer;
+    z-index: 102;
+    filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+  }
+
+  $grid-size: 5rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to right,
+      var(--primary-col-1) 1.5px,
+      transparent 1px
+    );
+    background-size: $grid-size $grid-size;
+    background-repeat: repeat;
+    background-position: center, center;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+      to bottom,
+      var(--primary-col-1) 1.5px,
+      transparent 1px
+    );
+    background-size: $grid-size $grid-size;
+    background-repeat: repeat;
+    background-position: center, center;
+  }
+}

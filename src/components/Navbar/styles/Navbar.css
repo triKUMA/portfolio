@@ -87,8 +87,6 @@
   padding: 0.2rem 0.25rem;
   cursor: pointer;
   z-index: 10;
-  -webkit-filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.95));
-          filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.95));
   -webkit-transition: top 300ms ease;
   transition: top 300ms ease;
 }
@@ -104,6 +102,7 @@
   display: -ms-flexbox;
   display: flex;
   gap: 0.5rem;
+  z-index: 150;
 }
 
 .navbar .icon {
