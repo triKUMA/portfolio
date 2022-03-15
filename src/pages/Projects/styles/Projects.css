@@ -4,6 +4,6 @@
 }
 
 .projects .section.two {
-  background-color: red;
+  background-color: var(--primary-col-2);
 }
 /*# sourceMappingURL=Projects.css.map */

@@ -43,6 +43,7 @@ function Modal(props: ModalProps) {
       >
         <ModalContext.Provider value={{ closeModal: () => disableModal() }}>
           {props.children}
+          <div className="square"></div>
         </ModalContext.Provider>
         <IoClose
           className="close"

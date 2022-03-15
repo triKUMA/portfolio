@@ -15,7 +15,18 @@
 
 .home .wave {
   position: absolute;
-  top: 25rem;
   z-index: 1;
+}
+
+.home .wave.one {
+  top: 25rem;
+  fill: var(--primary-col-3);
+}
+
+.home .wave.two {
+  top: 175rem;
+  fill: var(--primary-col-2);
+  -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
 }
 /*# sourceMappingURL=Home.css.map */

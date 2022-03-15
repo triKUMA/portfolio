@@ -1,3 +1,5 @@
+@import "../../../styles//colours.scss";
+
 .modal-background {
   position: fixed;
   min-width: 100vw;
@@ -63,7 +65,7 @@
   border-radius: 0.5rem;
   border: 3px solid var(--primary-col-1);
   box-shadow: -2px 4px 32px -16px rgba(255, 255, 0, 0.5);
-  background-color: rgba(255, 255, 0, 0.1);
+  background-color: alpha(var(--primary-col-1), 0.15);
   z-index: 101;
   animation: popIn 250ms ease;
 
@@ -82,7 +84,7 @@
     filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
   }
 
-  $grid-size: 5rem;
+  $grid-size: 5.5rem;
 
   &:before {
     content: "";
@@ -117,4 +119,9 @@
     background-repeat: repeat;
     background-position: center, center;
   }
+}
+
+.square {
+  width: 45rem;
+  height: 25rem;
 }

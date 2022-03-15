@@ -19,7 +19,17 @@
 
   .wave {
     position: absolute;
-    top: 25rem;
     z-index: 1;
+
+    &.one {
+      top: 25rem;
+      fill: var(--primary-col-3);
+    }
+
+    &.two {
+      top: 175rem;
+      fill: var(--primary-col-2);
+      transform: scale(-1, -1);
+    }
   }
 }

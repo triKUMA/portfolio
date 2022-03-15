@@ -1,14 +1,27 @@
+@import "./styles/colours.scss";
+
 :root {
-  --background-colour: black;
-  --text-colour: white;
-  // --background-colour: white;
-  // --text-colour: black;
-  --primary-col-1: rgb(221, 217, 0);
-  --primary-col-2: #e02463;
-  --primary-col-3: #0073d1;
-  // --primary-col-1: lime;
-  // --primary-col-2: red;
-  // --primary-col-3: blue;
+  &.dark {
+    @include defineColourRGB(--background-colour, 0, 0, 0);
+    @include defineColourRGB(--text-colour, 255, 255, 255);
+  }
+
+  &.light {
+    @include defineColourRGB(--background-colour, 255, 255, 255);
+    @include defineColourRGB(--text-colour, 0, 0, 0);
+  }
+
+  &.cmyk {
+    @include defineColourRGB(--primary-col-1, 221, 217, 0); // Yellow
+    @include defineColourRGB(--primary-col-2, 224, 36, 99); // Magenta
+    @include defineColourRGB(--primary-col-3, 0, 115, 209); // Cyan
+  }
+
+  &.rgb {
+    @include defineColourRGB(--primary-col-1, 0, 255, 0); // Green
+    @include defineColourRGB(--primary-col-2, 255, 0, 0); // Red
+    @include defineColourRGB(--primary-col-3, 0, 0, 255); // Blue
+  }
 }
 
 .App {
@@ -38,11 +51,11 @@
         var(--primary-col-2) 10%,
         var(--primary-col-3) 90%
       );
-      box-shadow: -1rem 2rem 5rem 0px rgba(255, 0, 00, 0.25);
+      box-shadow: -1rem 2rem 5rem 0px alpha(var(--primary-col-2), 0.3);
 
-      animation: hover 8000ms ease-in-out infinite alternate;
+      animation: hover-vert 8000ms ease-in-out infinite alternate;
 
-      @keyframes hover {
+      @keyframes hover-vert {
         0% {
           transform: translateY(-3rem);
         }
@@ -62,7 +75,7 @@
         var(--primary-col-2) 10%,
         var(--primary-col-3) 90%
       );
-      box-shadow: -0.5rem 0.75rem 2rem 0px rgba(255, 0, 255, 0.15);
+      box-shadow: -0.5rem 0.75rem 2rem 0px rgba(128, 0, 200, 0.3);
 
       animation: circle 20000ms linear infinite;
 
@@ -88,11 +101,11 @@
         var(--primary-col-2) 10%,
         var(--primary-col-3) 90%
       );
-      box-shadow: -0.5rem 1.5rem 3rem 0px rgba(0, 0, 255, 0.3);
+      box-shadow: -0.5rem 1.5rem 3rem 0px alpha(var(--primary-col-3), 0.3);
 
-      animation: figure-8 10000ms ease-in-out infinite alternate;
+      animation: hover-diag 10000ms ease-in-out infinite alternate;
 
-      @keyframes figure-8 {
+      @keyframes hover-diag {
         0% {
           transform: translate(-2rem, -2rem);
         }

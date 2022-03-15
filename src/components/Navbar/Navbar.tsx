@@ -8,43 +8,8 @@ import Contact from "../../pages/Contact/Contact";
 
 function Navbar() {
   const [contactModalActive, setContactModalActive] = useState(false);
-  const [colourTheme, setColourTheme] = useState(true);
-  const [colourPalette, setColourPalette] = useState(true);
-
-  function toggleColourTheme() {
-    setColourTheme(!colourTheme);
-
-    if (colourTheme) {
-      document.documentElement.style.setProperty(
-        "--background-colour",
-        "black"
-      );
-      document.documentElement.style.setProperty("--text-colour", "white");
-    } else {
-      document.documentElement.style.setProperty(
-        "--background-colour",
-        "white"
-      );
-      document.documentElement.style.setProperty("--text-colour", "black");
-    }
-  }
-
-  function toggleColourPalette() {
-    setColourPalette(!colourPalette);
-
-    if (colourPalette) {
-      document.documentElement.style.setProperty("--primary-col-1", "#dbd82c");
-      document.documentElement.style.setProperty("--primary-col-2", "#e02463");
-      document.documentElement.style.setProperty("--primary-col-3", "#0073d1");
-      // document.documentElement.style.setProperty("--primary-col-1", "#dbd82c");
-      // document.documentElement.style.setProperty("--primary-col-2", "#e54c7f");
-      // document.documentElement.style.setProperty("--primary-col-3", "#0078d7");
-    } else {
-      document.documentElement.style.setProperty("--primary-col-1", "#00ff00");
-      document.documentElement.style.setProperty("--primary-col-2", "#ff0000");
-      document.documentElement.style.setProperty("--primary-col-3", "#0000ff");
-    }
-  }
+  const [darkMode, setDarkMode] = useState(true);
+  const [cmykPalette, setCMYKPalette] = useState(true);
 
   function setToTopVisibility() {
     const toTop = document.getElementById("to-top");
@@ -59,8 +24,6 @@ function Navbar() {
   }
 
   useEffect(() => {
-    toggleColourTheme();
-    toggleColourPalette();
     setToTopVisibility();
 
     const toTop = document.getElementById("to-top");
@@ -70,6 +33,26 @@ function Navbar() {
       });
     }
   }, []);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
+    }
+  }, [darkMode]);
+
+  useEffect(() => {
+    if (cmykPalette) {
+      document.documentElement.classList.remove("rgb");
+      document.documentElement.classList.add("cmyk");
+    } else {
+      document.documentElement.classList.remove("cmyk");
+      document.documentElement.classList.add("rgb");
+    }
+  }, [cmykPalette]);
 
   return (
     <>
@@ -102,13 +85,13 @@ function Navbar() {
           <HiSun
             className="icon sun"
             onClick={() => {
-              toggleColourTheme();
+              setDarkMode(!darkMode);
             }}
           />
           <HiColorSwatch
             className="icon colour"
             onClick={() => {
-              toggleColourPalette();
+              setCMYKPalette(!cmykPalette);
             }}
           />
         </div>

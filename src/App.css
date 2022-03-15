@@ -1,9 +1,54 @@
-:root {
-  --background-colour: black;
-  --text-colour: white;
+/* Credit: https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables */
+:root.dark {
+  --background-colour: rgb(0, 0, 0);
+  --background-colour-r: 0;
+  --background-colour-g: 0;
+  --background-colour-b: 0;
+  --text-colour: rgb(255, 255, 255);
+  --text-colour-r: 255;
+  --text-colour-g: 255;
+  --text-colour-b: 255;
+}
+
+:root.light {
+  --background-colour: rgb(255, 255, 255);
+  --background-colour-r: 255;
+  --background-colour-g: 255;
+  --background-colour-b: 255;
+  --text-colour: rgb(0, 0, 0);
+  --text-colour-r: 0;
+  --text-colour-g: 0;
+  --text-colour-b: 0;
+}
+
+:root.cmyk {
   --primary-col-1: rgb(221, 217, 0);
-  --primary-col-2: #e02463;
-  --primary-col-3: #0073d1;
+  --primary-col-1-r: 221;
+  --primary-col-1-g: 217;
+  --primary-col-1-b: 0;
+  --primary-col-2: rgb(224, 36, 99);
+  --primary-col-2-r: 224;
+  --primary-col-2-g: 36;
+  --primary-col-2-b: 99;
+  --primary-col-3: rgb(0, 115, 209);
+  --primary-col-3-r: 0;
+  --primary-col-3-g: 115;
+  --primary-col-3-b: 209;
+}
+
+:root.rgb {
+  --primary-col-1: rgb(0, 255, 0);
+  --primary-col-1-r: 0;
+  --primary-col-1-g: 255;
+  --primary-col-1-b: 0;
+  --primary-col-2: rgb(255, 0, 0);
+  --primary-col-2-r: 255;
+  --primary-col-2-g: 0;
+  --primary-col-2-b: 0;
+  --primary-col-3: rgb(0, 0, 255);
+  --primary-col-3-r: 0;
+  --primary-col-3-g: 0;
+  --primary-col-3-b: 255;
 }
 
 .App {
@@ -30,13 +75,13 @@
   width: 25rem;
   height: 25rem;
   background-image: linear-gradient(45deg, var(--primary-col-2) 10%, var(--primary-col-3) 90%);
-  -webkit-box-shadow: -1rem 2rem 5rem 0px rgba(255, 0, 0, 0.25);
-          box-shadow: -1rem 2rem 5rem 0px rgba(255, 0, 0, 0.25);
-  -webkit-animation: hover 8000ms ease-in-out infinite alternate;
-          animation: hover 8000ms ease-in-out infinite alternate;
+  -webkit-box-shadow: -1rem 2rem 5rem 0px rgba(var(--primary-col-2-r), var(--primary-col-2-g), var(--primary-col-2-b), 0.3);
+          box-shadow: -1rem 2rem 5rem 0px rgba(var(--primary-col-2-r), var(--primary-col-2-g), var(--primary-col-2-b), 0.3);
+  -webkit-animation: hover-vert 8000ms ease-in-out infinite alternate;
+          animation: hover-vert 8000ms ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes hover {
+@-webkit-keyframes hover-vert {
   0% {
     -webkit-transform: translateY(-3rem);
             transform: translateY(-3rem);
@@ -47,7 +92,7 @@
   }
 }
 
-@keyframes hover {
+@keyframes hover-vert {
   0% {
     -webkit-transform: translateY(-3rem);
             transform: translateY(-3rem);
@@ -64,8 +109,8 @@
   width: 5rem;
   height: 5rem;
   background-image: linear-gradient(320deg, var(--primary-col-2) 10%, var(--primary-col-3) 90%);
-  -webkit-box-shadow: -0.5rem 0.75rem 2rem 0px rgba(255, 0, 255, 0.15);
-          box-shadow: -0.5rem 0.75rem 2rem 0px rgba(255, 0, 255, 0.15);
+  -webkit-box-shadow: -0.5rem 0.75rem 2rem 0px rgba(128, 0, 200, 0.3);
+          box-shadow: -0.5rem 0.75rem 2rem 0px rgba(128, 0, 200, 0.3);
   -webkit-animation: circle 20000ms linear infinite;
           animation: circle 20000ms linear infinite;
 }
@@ -106,13 +151,13 @@
   width: 10rem;
   height: 10rem;
   background-image: linear-gradient(190deg, var(--primary-col-2) 10%, var(--primary-col-3) 90%);
-  -webkit-box-shadow: -0.5rem 1.5rem 3rem 0px rgba(0, 0, 255, 0.3);
-          box-shadow: -0.5rem 1.5rem 3rem 0px rgba(0, 0, 255, 0.3);
-  -webkit-animation: figure-8 10000ms ease-in-out infinite alternate;
-          animation: figure-8 10000ms ease-in-out infinite alternate;
+  -webkit-box-shadow: -0.5rem 1.5rem 3rem 0px rgba(var(--primary-col-3-r), var(--primary-col-3-g), var(--primary-col-3-b), 0.3);
+          box-shadow: -0.5rem 1.5rem 3rem 0px rgba(var(--primary-col-3-r), var(--primary-col-3-g), var(--primary-col-3-b), 0.3);
+  -webkit-animation: hover-diag 10000ms ease-in-out infinite alternate;
+          animation: hover-diag 10000ms ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes figure-8 {
+@-webkit-keyframes hover-diag {
   0% {
     -webkit-transform: translate(-2rem, -2rem);
             transform: translate(-2rem, -2rem);
@@ -123,7 +168,7 @@
   }
 }
 
-@keyframes figure-8 {
+@keyframes hover-diag {
   0% {
     -webkit-transform: translate(-2rem, -2rem);
             transform: translate(-2rem, -2rem);
